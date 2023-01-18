@@ -7,12 +7,12 @@ public class Car {
     private String country;
 
     public Car(String brand, String model, double engineVolume, String color, int year, String country) {
-        this.brand = brand;
-        this.model = model;
-        this.engineVolume = engineVolume;
-        this.color = color;
-        this.year = year;
-        this.country = country;
+        this.brand = (brand != null && brand.isEmpty() != true && brand.isBlank() != true) ? brand : "Default";
+        this.model = (model != null && model.isEmpty() != true && model.isBlank() != true) ? model : "Default";
+        this.engineVolume = (engineVolume > 0) ? engineVolume : 1.5;
+        this.color = (color != null && color.isEmpty() != true && color.isBlank() != true) ? model : "белый";
+        this.year = (year > 0) ? year : 2000;
+        this.country = (country != null && country.isEmpty() != true && country.isBlank() != true) ? country : "Default";
     }
 
     public String getBrand() {
